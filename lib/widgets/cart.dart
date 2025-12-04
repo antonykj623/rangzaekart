@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rangza_ekart/widgets/placeorder.dart';
 
 class CartPage extends StatefulWidget {
   const CartPage({Key? key}) : super(key: key);
@@ -215,6 +216,16 @@ class _CartPageState extends State<CartPage> {
                         content: Text("Proceeding to Checkout..."),
                       ),
                     );
+
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>  PlaceOrderScreen(),
+                      ),
+                    );
+
+
+
                   },
                   child: const Text(
                     "Checkout",

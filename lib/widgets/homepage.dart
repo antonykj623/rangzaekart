@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:rangza_ekart/widgets/productdetails.dart';
+import 'package:rangza_ekart/widgets/profile.dart';
 
 class MediFastHomePage extends StatefulWidget {
   const MediFastHomePage({Key? key}) : super(key: key);
@@ -75,8 +76,18 @@ class _MediFastHomePageState extends State<MediFastHomePage> {
               onPressed: () {},
               icon: const Icon(Icons.search, color: Colors.black)),
           IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.receipt_long, color: Colors.black)),
+              onPressed: () {
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>  ProfileScreen(),
+                  ),
+                );
+
+
+              },
+              icon: const Icon(Icons.person, color: Colors.black)),
         ],
       ),
 
@@ -188,18 +199,10 @@ class _MediFastHomePageState extends State<MediFastHomePage> {
         ),
       ),
 
-      // ⚙️ Bottom Navigation Bar
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
-        selectedItemColor: const Color(0xFF007BFF),
-        unselectedItemColor: Colors.grey,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
-          BottomNavigationBarItem(icon: Icon(Icons.grid_view), label: ""),
-          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: ""),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: ""),
-        ],
-      ),
+
+
+
+
     );
   }
 
